@@ -39,8 +39,41 @@ async function post (req, res) {
 
 }
 
+//PUT
+async function put(req, res){
+    const { id } = req.params
+
+    const orders= await OrdersModel.findByIdAndUpdate({_id: id }, req.body, { new: true})
+
+    res.send ({
+        message: 'success',
+        orders,
+    })
+
+}
+
+//DELETE
+async function remove(req, res) {
+    const { id } = req.params
+
+    const remove = await OrdersModel.deleteOne({ _id: id })
+
+    let message = 'success'
+
+    if (remove.error) {
+        message = 'error'
+    }
+
+    res.send({
+        message: message
+    })
+}
+
 
 module.exports = {
     get,
     post,
+    put,
+    remove,
 }
+
