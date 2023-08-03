@@ -22,7 +22,7 @@ Todos os dados deverão ser validados;
 Um Cliente não pode excluir um Pedido criado por outro Cliente.
 
 # Desenvolvimento:
-Utilização de HTML, CSS, Javascript, Node, MongoDB e Postman.
+Utilização de HTML, CSS, Javascript, Node, MongoDB, Postman e CORS.
 Foi criado um repositório no github com commit adicionados no decorrer do desenvolvimento.
 
 # Status do Projeto: 
