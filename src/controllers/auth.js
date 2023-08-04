@@ -1,17 +1,19 @@
-const adminUser = 'admin'
-const adminPassword = '12345'
+const AuthModel = require('../models/auth')
 
-function login(req, res) {
+const adminUser = 'admin';
+const adminPassword = 'password';
+
+async function post(req, res) {
     const { username, password } = req.body;
 
     if (username === adminUser && password === adminPassword) {
-        // Redirecionando para o painel administrativo
-        res.redirect('/admin');
+        res.json({ message: 'Login realizado com sucesso' });
     } else {
-        res.status(401).json({ message: 'Senha invalida' });
+        res.status(401).json({ message: 'Dados inválidos' });
     }
 }
 
 module.exports = {
-    login
-}
+    post
+};
+

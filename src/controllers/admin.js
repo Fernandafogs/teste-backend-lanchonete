@@ -1,12 +1,15 @@
 function getAdminPage(req, res) {
-    //verificação da autenticação do usuário
-    if (usuarioEstaAutenticado) {
-        res.sendFile('admin.html', { root: './public' });
+    // Verifique se o usuário está autenticado
+    const isAuthenticated = req.query.auth === 'true' // Passamos auth=true na string de consulta
+
+    if (isAuthenticated) {
+        res.sendFile('admin.html', { root: './public' })
     } else {
-        res.redirect('/login.html'); // Redirecionamento para a página de login
+        res.redirect('/login.html')
     }
 }
 
 module.exports = {
     getAdminPage
 }
+

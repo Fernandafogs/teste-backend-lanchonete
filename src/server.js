@@ -1,48 +1,44 @@
-const express = require ('express')
-const cors = require ('cors')
-
-
-const db = require ('./database/db')
-const routes = require ('./routes/routes')
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
+const db = require('./database/db')
+const routes = require('./routes/routes')
 
 const app = express()
 
-// conexão com o banco de dados
+// Conexão com o banco de dados
 db.connect()
 
 const allowedOrigins = [
     'http://127.0.0.1:5500',
-    'http://www.app.com.br',
 ]
 
-//habilita CORS
-app.use(cors({
-    origin: function (origin, callback) {
-        let allowed = true
+// Habilita CORS
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            let allowed = true
 
-        //mobile app
-        if (!origin) allowed = true
+            // Mobile app
+            if (!origin) allowed = true
 
-        if (!allowedOrigins.includes(origin)) allowed = false
+            if (!allowedOrigins.includes(origin)) allowed = false
 
-        callback(null, allowed)
-    }
-}))
+            callback(null, allowed)
+        }
+    })
+)
 
-
-//habilita server para receber dados JSON
+// Habilita o servidor para receber dados JSON
 app.use(express.json())
 
-//definindo as rotas
-app.use ('/api',routes)
+// Definindo as rotas
+app.use('/api', routes)
 
-// executando o servidor
-const port = process.env.PORT || 8080 
-app.listen (port,()=> console.log(`Server is listening on port ${port}`))
+// Configuração para servir arquivos estáticos da pasta public
+app.use(express.static(path.join(__dirname, 'public')))
 
-//estrutura frontend
-app.use(express.static('public'))
-
-
-
+// Executando o servidor
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Server is listening on port ${port}`))
 
