@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste Lanchonete - Login</title>
-    <script type="module" src="css/style.css"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
             <i class="fa-solid fa-bars menu"></i>
             <ul>
                 <li>
-                <a href="#" data-option = "register-customers">Registrar Cliente</a>
+                <a href="#" data-option = "register-clients">Registrar Cliente</a>
                 </li>
                 <li>
-                <a href="#"  data-option = "list-customers">Listar Cliente</a>
+                <a href="#"  data-option = "list-clients">Listar Cliente</a>
                 </li>
                 <li>
                 <a href="#" data-option = "register-products">Registrar Produtos</a>
@@ -26,10 +26,10 @@
                 <a href="#" data-option = "list-products">Listar Produtos</a>
                 </li>
                 <li>
-                <a href="#" data-option = "register-requests">Registrar Pedidos</a>
+                <a href="#" data-option = "register-orders">Registrar Pedidos</a>
                 </li>
                 <li>
-                <a href="#" data-option = "list-requests">Listar Pedidos</a>
+                <a href="#" data-option = "list-orders">Listar Pedidos</a>
                 </li>
             </ul>
         </nav>
@@ -38,7 +38,7 @@
     <div class="lanchonete">
         <div class="container login">
             <h1>Login</h1>
-            <form action="" id="login-form" class="login-form">
+            <form action="" id="form-login" class="form-login">
             <div>
                 <label>Usuário:</label>
                 <input type="text" id="username" placeholder="Digite o usuário" name="username"required>
@@ -55,27 +55,27 @@
 
         <div class="loading hidden"></div>
      
-        <div class="container register-customers hidden">
+        <div class="container register-clients hidden">
             <h1>Cadastrar Clientes</h1>
-            <form action="" id="registerCustomer">
+            <form action="" id="registerClients">
                 <div>
                     <label>Nome</label>
-                    <input type="text" name="name" id="" placeholder="Digite seu nome">
+                    <input type="text" name="clientName" id="clientName" placeholder="Digite seu nome">
                     <span></span>
                 </div>
                 <div>
                     <label>Email</label>
-                    <input type="email" name="email" id="" placeholder="Digite seu email">
+                    <input type="email" name="clientEmail" id="clientEmail" placeholder="Digite seu email">
                     <span></span>
                 </div>
                 <div>
                     <label>Telefone</label>
-                    <input type="string" name="phone" id="" placeholder="Digite seu telefone">
+                    <input type="string" name="clientPhone" id="clientPhone" placeholder="Digite seu telefone">
                     <span></span>
                 </div>
                 <div>
                     <label>Endereço</label>
-                    <input type="string" name="address" id="" placeholder="Digite seu endereço">
+                    <input type="string" name="clientAddress" id="clientAddress" placeholder="Digite seu endereço">
                 <span></span>
                 </div>
                 <div>
@@ -85,9 +85,9 @@
             <button class="exit">Fechar</button>
         </div>    
             
-        <div class="container list-customers hidden">
+        <div class="container list-clients hidden">
             <h1>Listagem de clientes</h1>
-            <ul class="customers"></ul>
+            <ul class="clients"></ul>
             <button href = "#" class="exit">Fechar</button>
         </div>
       
@@ -96,12 +96,12 @@
             <form action="" id="registerProducts">
                 <div>
                     <label>Nome</label>
-                    <input type="text" name="name" id="" placeholder="Digite o nome do produto">
+                    <input type="text" name="productName" id="productName" placeholder="Digite o nome do produto">
                     <span></span>
                 </div>
                 <div>
                     <label>Preço</label>
-                    <input type="text" name="price" id="" placeholder="Digite o preço do produto">
+                    <input type="text" name="productPrice" id="productPrice" placeholder="Digite o preço do produto">
                     <span></span>
                 </div>
                 <div>
@@ -117,27 +117,27 @@
             <button href = "#" class="exit">Fechar</button>
         </div>
       
-        <div class="container register-requests hidden">
+        <div class="container register-orders hidden">
             <h1>Cadastrar Pedidos</h1>
-            <form action="" id="registerRequests" class="registerRequests">
+            <form action="" id="registerOrders" class="registerOrders">
                 <div>
                     <label>Código do cliente</label>
-                    <select name="codeCustomer" id="" class="codeCustomer"></select>
+                    <select name="codeClient" id="codeClient" class="codeClient"></select>
                     <span></span>
                 </div>
                 <div>
                     <label>Código do produto</label>
-                    <select name="codeProduct" id="" class="codeProduct"></select>
+                    <select name="codeProduct" id="codeProduct" class="codeProduct"></select>
                     <span></span>
                 </div>
                 <div>
                     <label>Data de criação</label>
-                    <input type="text" name="dataCriation" id="" placeholder="Informe a data de criação dd/mm/aaaa">
+                    <input type="text" name="dataCriation" id="dataCriation" placeholder="Informe a data de criação dd/mm/aaaa">
                     <span></span>
                 </div>
                 <div>
                     <label>Status do Pedido</label>
-                    <select name="statusRequest" id="">
+                    <select name="statusOrder" id="statusOrder">
                         <option value="processando">Pendente</option>
                         <option value="em-construção">Em preparo</option>
                         <option value="saindo-para-entrega">Em entrega</option>
@@ -153,19 +153,19 @@
             <button href = "#" class="exit">Fechar</abutton>
         </div>
       
-        <div class="container list-requests hidden">
+        <div class="container list-orders hidden">
             <h1>Listagem de Pedidos</h1>
-            <ul class="requests">
+            <ul class="orders">
             </ul>
             <button href = "#" class="exit">Fechar</button>
         </div>
       
-        <div class="container edit-status-request hidden">
+        <div class="container edit-status-order hidden">
             <h1>Editar status do pedido</h1>
             <input type="hidden" name="id">
             <form action="" class="formEdit" id="formEdit">
                 <input type="hidden" name="id">
-                <select name="statusRequest" id="">
+                <select name="statusOrder" id="">
                     <option value="processando">Pendente</option>
                     <option value="em-construção">Em preparo</option>
                     <option value="saindo-para-entrega">Em entrega</option>
@@ -179,39 +179,706 @@
         </div>
     </div>
 
-    
+<script>
 
-    
+    // TELA DE LOGIN
+    // Função para gerenciar a autenticação de login
 
-    <script>
-      
-    const formLogin = document.querySelector('#form-login');
-    const adminPanel = document.querySelector('.admin-panel');
+    function login(){
+        const defaultUser = 'admin'
+        const defaultPassword = 'teste'
+        const formLogin = document.querySelector('#form-login')
+        const loading = document.querySelector('.loading')
+        const login = document.querySelector('.login')
+        const menu = document.querySelector('header')
+        formLogin.addEventListener('submit', function(e){
+            e.preventDefault()
+            const username = document.forms['form-login']['username'].value
+            const password = document.forms['form-login']['password'].value
+            const verifyLogin = username === defaultUser && password === defaultPassword ? true : false
 
-    // Adicione um ouvinte de evento para o formulário de login
-    formLogin.addEventListener('submit', async function(event) {
-    event.preventDefault();
+            if(!verifyLogin){
+            formLogin.reset()
+            return alert("Usuário ou senha incorretos, tente novamente!")
+            }
+            
+            loading.classList.remove('hidden')
+            login.classList.add('hidden')
 
-    const formData = new FormData(event.target);
-    const loginData = Object.fromEntries(formData.entries());
+            setTimeout(function(){
+            menu.classList.remove('hidden')
+            loading.classList.add('hidden')
+            },600)
+        })
+    }
 
-    const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(loginData)
-    });
+    // PAINEL ADMINISTRATIVO
+    // Função para gerenciar as ações do painel administrativo
+    function panel() {
+        const buttons = document.querySelectorAll('header a')
+        const registerClients = document.querySelector('.register-clients')
+        const listClients = document.querySelector('.list-clients')
+        const registerProducts = document.querySelector('.register-products')
+        const listProducts = document.querySelector('.list-products')
+        const registerOrders = document.querySelector('.register-orders')
+        const listOrders = document.querySelector('.list-orders')
 
-    const result = await response.json()
-        if (response.ok) {
-            alert(result.message);
-            // Mostrar o painel de administração após o login bem-sucedido
-            adminPanel.classList.remove('hidden')
-        } else {
-            alert('Login failed: ' + result.message)
+        // Função auxiliar para ocultar todas as seções
+        function hideAllSections() {
+            registerClients.classList.add('hidden')
+            listClients.classList.add('hidden')
+            registerProducts.classList.add('hidden')
+            listProducts.classList.add('hidden')
+            registerOrders.classList.add('hidden')
+            listOrders.classList.add('hidden')
         }
+        // Adicionar evento de clique aos botões do painel
+        buttons.forEach((button) => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault()
+                const option = button.dataset.option
+
+                /*// Ocultar todas as seções antes de exibir a seção correspondente
+                hideAllSections()*/
+
+                // Exibir a seção correspondente ao botão clicado
+                switch (option) {
+                    case 'register-clients':
+                        registerClients.classList.remove('hidden')
+                        listCustomers.classList.add('hidden')
+                        registerProducts.classList.add('hidden')
+                        listProducts.classList.add('hidden')
+                        registerOrders.classList.add('hidden')
+                        listOrders.classList.add('hidden')
+                        registerClients.classList.remove('hidden')
+                        break
+                    case 'list-clients':
+                        registerProducts.classList.add('hidden')
+                        listProducts.classList.add('hidden')
+                        registerOrders.classList.add('hidden')
+                        listOrders.classList.add('hidden')
+                        registerClients.classList.add('hidden')
+                        listClients.classList.remove('hidden')
+                        break
+                    case 'register-products':
+                        listProducts.classList.add('hidden')
+                        registerOrders.classList.add('hidden')
+                        listOrders.classList.add('hidden')
+                        registerClients.classList.add('hidden')
+                        listClients.classList.add('hidden')
+                        registerProducts.classList.remove('hidden')
+                        break
+                    case 'list-products':
+                        registerOrders.classList.add('hidden')
+                        listOrders.classList.add('hidden')
+                        registerClients.classList.add('hidden')
+                        listClients.classList.add('hidden')
+                        registerProducts.classList.add('hidden')
+                        listProducts.classList.remove('hidden')
+                        break
+                    case 'register-orders':
+                        listOrders.classList.add('hidden')
+                        registerClients.classList.add('hidden')
+                        listClients.classList.add('hidden')
+                        registerProducts.classList.add('hidden')
+                        listProducts.classList.add('hidden')
+                        registerOrders.classList.remove('hidden')
+                        break
+                    case 'list-orders':
+                        registerClients.classList.add('hidden')
+                        listClients.classList.add('hidden')
+                        registerProducts.classList.add('hidden')
+                        listProducts.classList.add('hidden')
+                        registerOrders.classList.add('hidden')
+                        listOrders.classList.remove('hidden')
+                        break
+                }
+            })
+        })
+    }
+
+    // Chama a função do painel ao carregar a página
+    panel()
+
+
+
+
+    /****CLIENTES ****/
+    // Função para adicionar eventos de exclusão de cliente
+    function addEventDeleteClient() {
+        const buttonsDelete = document.querySelectorAll(".button-delete")
+        buttonsDelete.forEach((button) => {
+            button.addEventListener("click", function(e) {
+            e.preventDefault() // Evita o comportamento padrão de recarregar a página
+
+        const id = this.dataset.id
+        
+        // Enviar uma solicitação de exclusão do cliente pelo ID
+        fetch(`http://127.0.0.1:5500/api/clients/${id}`, {
+            method: 'DELETE'
+        }).then((response) => {
+            response.json().then((data) => {
+            if (data.message === 'success') {
+                listClients();
+                alert("Cliente removido com sucesso")
+            } else {
+                alert("Ops, houve um erro! Tente novamente!")
+            }
+            })
+        })
+        })
     })
+    }
+
+    // Função para listar os clientes
+    function listClients() {
+        const list = document.querySelector('.clients')
+        let htmlClient = ''
+        
+        // Obter a lista de clientes do servidor
+        fetch('http://localhost:8080/api/clients').then(response => {
+            response.json().then(data => {
+            data.forEach((clients) => {
+                htmlClient += `
+                <li>
+                    ${clients.name} | ${clients.email}
+                    <a href="#" class="button-delete" data-id="${clients._id}">[excluir]</a>
+                </li>
+                `
+            })
+
+            list.innerHTML = htmlClient
+            addEventDeleteClient() // Adicionar eventos de exclusão aos botões de exclusão
+            })
+        })
+    }
+
+    // Função para verificar campos do formulário de adição de clientes
+    function verifyCampusAddClients(clientName, clientEmail, clientPhone, clientAddress) {
+        let verifyError = false
+
+        // Validar o campo de nome
+        const inputName = document.forms['registerClients']['clientName']
+        const regexName = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
+        const verifyName = regexName.test(name)
+        if (!verifyName) {
+            verifyError = true
+            inputName.classList.add('errorInput')
+            const span = inputName.nextElementSibling
+            span.innerHTML = 'Por favor, preencha seu nome'
+        } else {
+            inputName.classList.remove('errorInput')
+            const span = inputName.nextElementSibling
+            span.innerHTML = ''
+        }
+        // Validar o campo de email
+        const inputEmail = document.forms['registerClients']['clientEmail']
+        const regexEmail = /\S+@\S+\.\S+/
+        const verifyEmail = regexEmail.test(clientEmail)
+        if (!verifyEmail) {
+            verifyError = true
+            inputEmail.classList.add('errorInput')
+            const span = inputEmail.nextElementSibling
+            span.innerHTML = 'Por favor, preencha o campo de e-mail'
+        } else {
+            inputEmail.classList.remove('errorInput')
+            const span = inputEmail.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        // Validar o campo de telefone
+        const inputPhone = document.forms['registerClients']['clientPhone']
+        if (!clientPhone) {
+            verifyError = true
+            inputPhone.classList.add('errorInput')
+            const span = inputPhone.nextElementSibling
+            span.innerHTML = 'Por favor, informe seu telefone de contato'
+        } else {
+            inputPhone.classList.remove('errorInput')
+            const span = inputPhone.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        // Validar o campo de endereço
+        const inputAddress = document.forms['registerClients']['clientAddress']
+        if (!clientAddress) {
+            verifyError = true
+            inputAddress.classList.add('errorInput')
+            const span = inputAddress.nextElementSibling
+            span.innerHTML = 'Por favor, preencha o seu endereço'
+        } else {
+            inputAddress.classList.remove('errorInput')
+            const span = inputAddress.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        return verifyError
+    }
+
+    // Função para adicionar clientes
+    function addClients() {
+        const formRegister = document.querySelector('#registerClients');
+
+        formRegister.addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            // Obter os valores dos campos do formulário
+            const name = document.forms['registerClients']['clientName'].value
+            const email = document.forms['registerClients']['clientEmail'].value
+            const phone = document.forms['registerClients']['clientPhone'].value
+            const address = document.forms['registerClients']['clientAddress'].value
+            
+            // Verificar os campos do formulário
+            const verifyForm = verifyCampusAddClients(clientName, clientEmail, clientPhone, clientAddress)
+            if (!verifyForm) {
+            try {
+                // Enviar os detalhes do novo cliente para o servidor
+                const response = await fetch('http://127.0.0.1:5500/api/clients', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    clientName,
+                    clientEmail,
+                    clientPhone,
+                    clientAddress
+                })
+            })
+
+                const data = await response.json()
+                if (data.message === 'success') {
+                    formRegister.reset()
+                    alert("Cliente cadastrado com sucesso!")
+                    listClients()
+                } else {
+                    alert("Ops, ocorreu um erro! Tente novamente!")
+                }
+            } catch (error) {
+                alert("Ops, ocorreu um erro na requisição! Tente novamente!")
+            }
+            }
+        })
+    }
+
+
+
+
+    /****PRODUTOS ****/
+    // Função para adicionar eventos de exclusão de produtos
+    function addEventDeleteProduct(){
+        const buttonsDelete = document.querySelectorAll('.list-products a')
+        buttonsDelete.forEach((button) => {
+            button.addEventListener("click", function(e){
+            e.preventDefault()// Evita o comportamento padrão de recarregar a página
+
+            const id = button.dataset.id
+            // Enviar uma solicitação de exclusão do produto pelo ID
+            fetch(`http://127.0.0.1:5500/api/products/${id}`, {
+                method: 'DELETE'
+            }).then((response) => {
+                response.json().then((data) => {
+                if(data.message === 'success'){
+                    listProducts()
+                    alert("Produto removido com sucesso")         
+                }else{
+                    alert("Ops, ocorreu um erro! Tente novamente!")
+                }
+                })
+            })
+            })
+        })
+    }
+
+    // Função para listar os produtos
+    function listProducts(){
+        const list = document.querySelector('.products')
+        let htmlProduct = ''
+
+        // Obter a lista de produtos do servidor
+        fetch('http://localhost:8080/api/products').then((resolve) => {
+            resolve.json().then((data) => {
+            data.forEach((product) => {
+                htmlProduct += `
+                <li>
+                ${product.productName} | R$ ${product.productPrice}
+                <a href = "#" class = "button-delete" data-id = "${product._id}">[excluir]</a>
+                </li>     
+                `
+            })
+
+            list.innerHTML = htmlProduct
+            addEventDeleteProduct()// Adicionar eventos de exclusão aos botões de exclusão
+            })
+        })
+    }
+    
+    // Função para verificar campos do formulário de adição de produtos
+    function verifyCampusAddProducts(productName, productPrice){
+        let verifyError = false
+
+        // Validar o campo de nome
+        const inputName = document.forms['registerProducts']['productName']
+        const regexName = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
+        const verifyName = regexName.test(productName)
+        if(!verifyName){
+            verifyError = true
+            inputName.classList.add('errorInput')
+            const span = inputName.nextElementSibling
+            span.innerHTML = 'Insira o nome do produto'
+        }else{
+            inputName.classList.remove('errorInput')
+            const span = inputName.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        // Validar o campo do preço
+        const inputPrice = document.forms['registerProducts']['productPrice']
+        if(!productPrice){
+            verifyError = true
+            inputPrice.classList.add('errorInput')
+            const span = inputPrice.nextElementSibling
+            span.innerHTML = 'Insira o preço do produto'
+        }else{
+            inputPrice.classList.remove('errorInput')
+            const span = inputPrice.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        return verifyError
+    }
+
+    // Função para adicionar produtos
+    function addProducts(){
+        const formRegister = document.querySelector('#registerProducts')
+        // Adicionar um ouvinte de evento para o formulário de cadastro de produtos
+        formRegister.addEventListener("submit", function(e){
+            e.preventDefault()// Impede o comportamento padrão de envio do formulário
+
+            // Obter os valores do nome e preço do formulário
+            const productName = document.forms['registerProducts']['productName'].value
+            const productPrice = document.forms['registerProducts']['productPrice'].value
+
+            // Verificar os campos do formulário usando a função de verificação
+            const verifyForm = verifyCampusAddProducts(productName, productPrice)
+
+            if(!verifyForm){ // Se a verificação for bem-sucedida
+                // Enviar uma solicitação POST para adicionar um novo produto
+                fetch('http://localhost:8080/api/products', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                    productName,
+                    productPrice
+                    })
+                }).then((response) => {
+                    response.json().then((data) => {
+                    if(data.message === 'success'){
+                        formRegister.reset() // Limpar o formulário após o cadastro
+
+                        alert("Produto cadastrado com sucesso")
+                    }else{
+                        alert("Ops, não foi possível cadastrar o produto! Tente novamente!")
+                    }
+                })
+            })
+            }
+        })
+    }
+
+    /****PEDIDOS ****/
+    // Função para adicionar evento de edição de pedido
+    function addEventEditOrder() {
+        const buttonsEdit = document.querySelectorAll(".edit-status")
+        const listOrders = document.querySelector('.list-orders')
+        const editStatus = document.querySelector('.edit-status-order')
+
+        buttonsEdit.forEach((button) => {
+            button.addEventListener("click", function(e) {
+            e.preventDefault()
+            editStatus.classList.remove('hidden')
+            listOrders.classList.add('hidden')
+            const id = button.dataset.id
+            document.forms['formEdit'].id.value = id
+            })
+        })
+    }
+
+    // Função para listar pedidos
+    function listOrders() {
+        const list = document.querySelector('.orders')
+        let htmlOrder = ''
+
+        fetch('http://localhost:8080/api/orders').then((response) => {
+            if (response.ok) {
+                return response.json(); // Parse JSON aqui
+            } else {
+                throw new Error('Failed to fetch orders')
+            }
+        }).then((data) => {
+            // Verifique se 'data' é uma matriz
+            if (Array.isArray(data)) {
+                data.forEach((order) => {
+                    htmlOrder += `
+                    <li> 
+                    <p>Código do Cliente: ${order.codeClient}</p>
+                    <p>Código do Produto: ${order.codeProduct}</p>
+                    <p>Data de criação: ${order.dataCriation}</p>
+                    <p>Status do pedido: ${order.status}</p>
+                    <a href="#" class="edit-status" data-id="${order._id}" data-status="${order.status}">[alterar status do pedido]</a>
+                    </li>
+                    `
+                })
+
+                list.innerHTML = htmlOrder;
+                addEventEditOrder();
+            } else {
+                console.error('Invalid data format for orders')
+            }
+        }).catch((error) => {
+            console.error('Error fetching orders:', error)
+        })
+    }
+
+    // Função para verificar campos de pedido e status
+    function verifyCampusAddOrders(codeClient, codeProduct, dataCriation, status) {
+        let verifyError = false 
+
+        const inputCodeClient = document.forms['registerOrders']['codeClient']
+        if (!codeClient) {
+            verifyError = true
+            inputCodeClient.classList.add('errorInput')
+            const span = inputCodeClient.nextElementSibling
+            span.innerHTML = 'Insira o código do cliente'
+        } else {
+            inputCodeClient.classList.remove('errorInput')
+            const span = inputCodeClient.nextElementSibling
+            span.innerHTML = ''
+        }
+
+
+        const inputCodeProduct = document.forms['registerOrders']['codeProduct']
+        if(!codeProduct){
+            verifyError = true
+            inputCodeProduct.classList.add('errorInput')
+            const span = inputCodeProduct.nextElementSibling
+            span.innerHTML = 'Insira o código do produto'
+        }else{
+            inputCodeProduct.classList.remove('errorInput')
+            const span = inputCodeProduct.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        const inputDataCriation = document.forms['registerOrders']['dataCriation']
+        if(!dataCriation){
+            verifyError = true
+            inputDataCriation.classList.add('errorInput')
+            const span = inputDataCriation.nextElementSibling
+            span.innerHTML = 'Insira a data de criação do produto'
+        }else{
+            inputDataCriation.classList.remove('errorInput')
+            const span = inputDataCriation.nextElementSibling
+            span.innerHTML = ''
+        }
+
+        const inputStatus = document.forms['registerOrders']['statusOrder']
+        if(!status){
+            verifyError = true
+            inputStatus.classList.add('errorInput')
+            const span = inputStatus.nextElementSibling
+            span.innerHTML = 'Insira o status do pedido'
+        }else{
+            inputStatus.classList.remove('errorInput')
+            const span = inputStatus.nextElementSibling
+            span.innerHTML = ''
+        }
+
+         return verifyError
+    }
+
+
+    function addOrders() {
+        const formRegister = document.querySelector('.registerOrders')
+        const codeClient = document.querySelector('.codeClient')
+        const codeProduct = document.querySelector('.codeProduct')
+        
+        // Obter opções de clientes e produtos do servidor e preencher select boxes 
+        fetch('http://localhost:8080/api/clients').then(response => {
+            response.json().then(data => {
+                let optionClients = ''
+                data.forEach(client => {
+                    optionClients += `<option value="${client._id}">${client.name}</option>`
+                })
+                codeClient.innerHTML = optionClients
+            })
+        })
+
+        fetch('http://localhost:8080/api/products').then(response => {
+            response.json().then(data => {
+                let optionProducts = ''
+                data.forEach(product => {
+                    optionProducts += `<option value="${product._id}">${product.productName}</option>`
+                })
+                codeProduct.innerHTML = optionProducts
+            })
+        })
+    
+    formRegister.addEventListener("submit", function(e){
+        e.preventDefault()
+
+        // Obter valores do formulário
+        const codeClient = document.forms['registerOrders']['codeClient'].value
+        const codeProduct = document.forms['registerOrders']['codeProduct'].value
+        const dataCriation = document.forms['registerOrders']['dataCriation'].value
+        const status = document.forms['registerOrders']['statusOrder'].value
+
+        // Verificar campos do formulário
+        const verifyForm = verifyCampusAddOrders(codeClient, codeProduct, dataCriation, status)
+       
+        if(!verifyForm){
+            // Enviar solicitação POST para adicionar um novo pedido
+            fetch('http://127.0.0.1:5500/api/orders', {
+                method: 'POST',
+                headers:{
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                codeClient,
+                codeProduct,
+                dataCriation,
+                status
+                })
+            }).then((response) => {
+                response.json().then((data) => {
+                if(data.message === 'success'){
+                    formRegister.reset()
+                    alert("Pedido cadastrado com sucesso!")
+                    listRequests()
+                }else{
+                    alert("Ops, ocorreu um erro! Tente novamente!")
+                }
+                })
+            })
+        }
+        
+    })
+    }
+
+    // Função para editar o status de um pedido
+    function editStatus(){
+        const formEdit = document.querySelector('.formEdit')
+        const listOrders = document.querySelector('.list-orders')
+        const editStatus = document.querySelector('.edit-status-order')
+
+        formEdit.addEventListener("submit", function(e){
+            e.preventDefault()
+
+            const id = document.forms['formEdit']['id'].value
+            const status = document.forms['formEdit']['statusOrder'].value
+
+            // Enviar solicitação PUT para atualizar o status do pedido
+            fetch(`http://127.0.0.1:5500/api/orders/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status
+            })
+            }).then((response) => {
+            response.json().then((data) => {
+                if(data.message === 'success'){
+                alert("Produto alterado com sucesso")
+                listOrders.classList.remove('hidden')
+                editStatus.classList.add('hidden')
+                }else{
+                    alert("Ops, houve um erro! Tente novamente!")
+                }
+            })
+            })
+        })
+    }
+
+    // Função para ocultar elementos
+    function exit(){
+        const buttonsExit = document.querySelectorAll('.exit')
+        
+        buttonsExit.forEach((button) => {
+            button.addEventListener("click", function(e){
+                e.preventDefault()
+                const parentElement = button.parentElement
+                parentElement.classList.add('hidden')
+            })
+        })
+    }
+
+    // Função para abrir e fechar o menu
+    function openMenu(){
+        const iconMenu = document.querySelector('.menu')
+
+        iconMenu.addEventListener("click", function(){
+            document.querySelector('header ul').classList.toggle('open')
+        })
+    }
+
+    // Chamar funções ao carregar a página
+    login() // Função para o login
+    panel() // Função para mostrar o painel principal
+    listClients() // Função para listar clientes
+    addClients() // Função para adicionar clientes
+    listProducts() // Função para listar produtos
+    addProducts() // Função para adicionar produtos
+    listOrders() // Função para listar pedidos
+    addOrders() // Função para adicionar pedidos
+    editStatus() // Função para editar status de pedido
+    exit() // Função para ocultar elementos
+    openMenu() // Função para abrir/fechar o menu
+
+
+
+      
+    /*document.addEventListener('DOMContentLoaded', function() {
+        const formLogin = document.querySelector('#form-login')
+        const adminPanel = document.querySelector('.admin-panel')
+        const closeButtonSelectors = document.querySelectorAll('.exit')
+        const containers = document.querySelectorAll('.container')
+
+        // Ouvinte de evento para o formulário de login
+        formLogin.addEventListener('submit', async function(event) {
+            event.preventDefault()
+
+        const formData = new FormData(event.target)
+        const loginData = Object.fromEntries(formData.entries())
+
+        const response = await fetch('/api/login', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        })
+
+        const result = await response.json()
+            if (response.ok) {
+            alert(result.message)
+            // Painel de administração após o login bem-sucedido
+            adminPanel.classList.remove('hidden')
+            } else {
+            alert('Login failed: ' + result.message);
+            }
+        })
+
+        // Eventos de clique para os botões "Fechar"
+        closeButtonSelectors.forEach(button => {
+            button.addEventListener('click', event => {
+            event.preventDefault();
+            const container = event.target.closest('.container');
+            container.classList.add('hidden');
+            })
+        })
+    })*/
 
     </script>
 </body>
